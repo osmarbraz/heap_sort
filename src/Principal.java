@@ -73,7 +73,8 @@ public class Principal {
 
     /**
      * Heapsort rearranja A em ordem crescente. 
-     * T(n) = nO(lg n)+Theta(4n+1)= O(n log n) Complexidade no pior caso O(n log n)
+     * T(n) = nO(lg n)+Theta(4n+1)= O(n log n) 
+     * Complexidade no pior caso O(n log n)
      *
      * @param A Vetor dos nós da árvore
      * @param n Quantidade de nós da árvore
