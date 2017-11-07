@@ -26,9 +26,9 @@ public class Principal {
     }
 
     /**
-     * MaxHeapFy Recebe A e i >= 1 tais que subárvores com raízes 2i e 2i + 1.
-     * são max-heaps e rearranja A de modo que sub´arvore com raiz i seja um
-     * max-heap. 
+     * MaxHeapFy.
+     * Recebe A e i >= 1 tais que subárvores com raízes 2i e 2i + 1.
+     * São max-heaps e rearranja A de modo que subárvore com raiz i seja um max-heap. 
      * Slide 58 
      * T(h)<= T(h−1) + Theta(5)+O(2) 
      * @param A Vetor a ser ordenado
@@ -72,7 +72,13 @@ public class Principal {
     }
 
     /**
-     * Heapsort rearranja A em ordem crescente. 
+     * Heapsort.
+     * Rearranja A em ordem crescente. 
+     * Algoritmos de ordenação podem ser ou não in-place ou estáveis.
+     * Um algoritmo de ordenação é in-place se a memória adicional requerida é 
+     * independente do tamanho do vetor que está sendo ordenado.
+     * O heapsort é in-place 
+     * 
      * T(n) = nO(lg n)+Theta(4n+1)= O(n log n) 
      * Complexidade no pior caso O(n log n)
      *
