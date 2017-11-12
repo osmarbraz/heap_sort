@@ -13,6 +13,26 @@
 public class Principal {
 
     /**
+     * O piso (= floor) de um número real x é o resultado do arredondamento de x para baixo. 
+     * Em outras palavras, o piso de x é o único número inteiro i tal que 
+     * i<=x<i+1.
+     * Ex. O piso de 3.9 é 3
+     * 
+     * Em java pode ser utilizando Math.floor(double)
+     * 
+     * @param x Numero real a ser cálculado o piso.
+     * @return um valor inteiro com o piso de x.
+     */
+    public static int piso(double x) {
+        //Pego a parte inteira de x
+        int parteInteira = (int) x;
+        //Pego a parte fracionária de x
+        double parteFracionaria = x - parteInteira;
+        //Retorno x subtraindo a parte fracionaria 
+        return (int) (x - parteFracionaria);
+    }
+    
+    /**
      * Realiza a troca de posição de dois elementos do vetor.
      *
      * @param A Vetor que contem os dados
@@ -29,15 +49,17 @@ public class Principal {
      * MaxHeapFy.
      * Recebe A e i >= 1 tais que subárvores com raízes 2i e 2i + 1.
      * São max-heaps e rearranja A de modo que subárvore com raiz i seja um max-heap. 
-     * Slide 58 
+     * Slide 58 aula 15/09/2017 
      * T(h)<= T(h−1) + Theta(5)+O(2) 
      * @param A Vetor a ser ordenado
      * @param n Quantidade de elementos do vetor
-     * @param i No da árvore
+     * @param i Representa a posição do nó Raiz da árvore
      */
     private static void maxHeapify(int A[], int n, int i) {
         int maior = 0;
+        //Filho da esquerda
         int e = 2 * i;                          //Theta(1)
+        //Filho da direita
         int d = 2 * i + 1;                      //Theta(1)
         if ((e < n) && (A[e] > A[i])) {         //Theta(1)
             maior = e;                          //O(1)
@@ -60,13 +82,7 @@ public class Principal {
      * @param n Quantidade de elementos da árvore
      */
     private static void maxHeap(int A[], int n) {
-        int x;
-        if ((n % 2) == 0) {
-            x = n / 2;
-        } else {
-            x = (n - 1) / 2;
-        }
-        for (int i = x; i >= 0; i--) {
+        for (int i = piso(n/2); i >= 0; i--) {
             maxHeapify(A, n, i);
         }
     }
@@ -86,8 +102,8 @@ public class Principal {
      * @param n Quantidade de nós da árvore
      */
     private static void heapsort(int A[], int n) {
-        maxHeap(A, n + 1);                        //Theta(n)
-        int m = n + 1;                            //Theta(1)
+        maxHeap(A, n + 1);                      //Theta(n)
+        int m = n + 1;                          //Theta(1)
         for (int i = n; i >= 0; i--) {          //Theta(n)
             troca(A, 0, i);                     //Theta(n)
             m = m - 1;                          //Theta(n)
