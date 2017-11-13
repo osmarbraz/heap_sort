@@ -4,8 +4,22 @@
  * Programa de Pós-Graduação em Ciências da Computação - PROPG
  * Disciplinas: Projeto e Análise de Algoritmos
  * Prof Alexandre Gonçalves da Silva 
- * Baseado nos slides da aula 15/09/2017 
- */
+ * Baseado nos slides 58 da aula 15/09/2017 
+ *
+ * Conceitos:
+ * O Heapsort é um algoritmo de ordenação que usa uma estrutura de dados sofisticada chamada heap.
+ * heap: árvore binária ordenada
+ * Heaps podem ser utilizados para implementar filas de prioridade que são extremamente úteis em outros algoritmos.
+ * Um heap é um vetor A que simula uma árvore binária completa, com exceção possivelmente do último nível.
+ * Considere um vetor A[1...n] representando um heap.
+ * Cada posição do vetor corresponde a um nó do heap.
+ * O pai de um nó i é (i/2).
+ * O nó 1 não tem pai, pois ele é a raiz da heap.
+ *
+ * maxHeap: heap onde nós pais são maiores que os respectivos nós filhos
+ * maxHeapiFy: rearranja os elementos de uma heap.
+ * 
+ **/
 
 /**
  * @author Osmar de Oliveira Braz Junior
@@ -46,9 +60,11 @@ public class Principal {
     }
 
     /**
-     * MaxHeapFy.
+     * MaxHeapiFy.
      * Recebe A e i >= 1 tais que subárvores com raízes 2i e 2i + 1.
      * São max-heaps e rearranja A de modo que subárvore com raiz i seja um max-heap. 
+     * Organiza os elementos da heap, coloca o maior na raiz.
+     * 
      * Slide 58 aula 15/09/2017 
      * T(h)<= T(h−1) + Theta(5)+O(2) 
      * @param A Vetor a ser ordenado
@@ -56,18 +72,20 @@ public class Principal {
      * @param i Representa a posição do nó Raiz da árvore
      */
     private static void maxHeapify(int A[], int n, int i) {
+        //Armazena o maior elemento
         int maior = 0;
         //Filho da esquerda
-        int e = 2 * i;                          //Theta(1)
+        int esquerda = 2 * i;                          //Theta(1)
         //Filho da direita
-        int d = 2 * i + 1;                      //Theta(1)
-        if ((e < n) && (A[e] > A[i])) {         //Theta(1)
-            maior = e;                          //O(1)
+        int direita = 2 * i + 1;                      //Theta(1)
+        
+        if ((esquerda < n) && (A[esquerda] > A[i])) {         //Theta(1)
+            maior = esquerda;                          //O(1)
         } else {
             maior = i;                          //O(1)
         }
-        if ((d < n) && (A[d] > A[maior])) {     //Theta(1)
-            maior = d;                          //O(1)
+        if ((direita < n) && (A[direita] > A[maior])) {     //Theta(1)
+            maior = direita;                          //O(1)
         }
         if (maior != i) {                       //Theta(1)
             troca(A, i, maior);                 //O(1)
@@ -77,11 +95,12 @@ public class Principal {
 
     /**
      * Recebe um vetor A e rearranja A para que seja max-heap.
+     * Em maxHeap os nós pais são maiores que os respectivos nós filhos
      *
      * @param A Vetor dos nós da árvore
      * @param n Quantidade de elementos da árvore
      */
-    private static void maxHeap(int A[], int n) {
+    private static void constroiMaxHeap(int A[], int n) {
         for (int i = piso(n/2); i >= 0; i--) {
             maxHeapify(A, n, i);
         }
@@ -102,7 +121,7 @@ public class Principal {
      * @param n Quantidade de nós da árvore
      */
     private static void heapsort(int A[], int n) {
-        maxHeap(A, n + 1);                      //Theta(n)
+        constroiMaxHeap(A, n + 1);                      //Theta(n)
         int m = n + 1;                          //Theta(1)
         for (int i = n; i >= 0; i--) {          //Theta(n)
             troca(A, 0, i);                     //Theta(n)
@@ -115,8 +134,10 @@ public class Principal {
 
         //Vetor dos dados    
         int A[] = {50, 70, 60, 90, 10, 30, 20, 40};
-
-        //Fim do vetor
+        
+        // r representa o número de elementos
+	// Logo, o índice deve variar de 0 a r-1 elementos.
+	// Portanto, o último índice é r-1
         int r = A.length - 1;
 
         System.out.println(">>> HeapSort <<<");
