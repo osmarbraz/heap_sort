@@ -77,19 +77,19 @@ public class Principal {
         //Filho da esquerda
         int esquerda = 2 * i;                          //Theta(1)
         //Filho da direita
-        int direita = 2 * i + 1;                      //Theta(1)
+        int direita = 2 * i + 1;                       //Theta(1)
         
-        if ((esquerda < n) && (A[esquerda] > A[i])) {         //Theta(1)
+        if ((esquerda < n) && (A[esquerda] > A[i])) {  //Theta(1)
             maior = esquerda;                          //O(1)
         } else {
-            maior = i;                          //O(1)
+            maior = i;                                  //O(1)
         }
-        if ((direita < n) && (A[direita] > A[maior])) {     //Theta(1)
-            maior = direita;                          //O(1)
+        if ((direita < n) && (A[direita] > A[maior])) { //Theta(1)
+            maior = direita;                            //O(1)
         }
-        if (maior != i) {                       //Theta(1)
-            troca(A, i, maior);                 //O(1)
-            maxHeapify(A, n, maior);            //Theta(h-1)
+        if (maior != i) {                               //Theta(1)
+            troca(A, i, maior);                         //O(1)
+            maxHeapify(A, n, maior);                    //Theta(h-1)
         }
     }
 
