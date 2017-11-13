@@ -121,7 +121,7 @@ public class Principal {
      * @param n Quantidade de nós da árvore
      */
     private static void heapsort(int A[], int n) {
-        constroiMaxHeap(A, n + 1);                      //Theta(n)
+        constroiMaxHeap(A, n);                  //Theta(n)
         int m = n + 1;                          //Theta(1)
         for (int i = n; i >= 0; i--) {          //Theta(n)
             troca(A, 0, i);                     //Theta(n)
@@ -138,18 +138,19 @@ public class Principal {
         // r representa o número de elementos
 	// Logo, o índice deve variar de 0 a r-1 elementos.
 	// Portanto, o último índice é r-1
-        int r = A.length - 1;
+        int n = A.length - 1;
 
         System.out.println(">>> HeapSort <<<");
         System.out.println("Original: ");
-        for (int i = 0; i <= r; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.println((i) + " - " + A[i]);
         }
 
-        heapsort(A, r);
+        //Realiza a ordenação do vetor A
+        heapsort(A, n);
 
         System.out.println("Depois: ");
-        for (int i = 0; i <= r; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.println((i) + " - " + A[i]);
         }
     }
