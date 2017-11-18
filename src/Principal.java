@@ -9,7 +9,7 @@
  *
  * Página 110 Cormen 3 ed
  *
- * Ordenação por HeapSort
+ * Algoritmo HeapSort/Ordenação por Heap
  *
  * Conceitos:
  * O Heapsort é um algoritmo de ordenação que usa uma estrutura de dados sofisticada chamada heap.
@@ -180,17 +180,14 @@ public class Principal {
         int A[] = {50, 70, 60, 90, 10, 30, 20, 40};
 
         // r representa o número de elementos
-        // Logo, o índice deve variar de 0 a r-1 elementos.
-        // Portanto, o último índice é r-1
         int n = A.length;
 
-        System.out.println(">>> HeapSort <<<");
+        System.out.println(">>> Algoritmo HeapSort/Ordenação por Heap <<<");
         System.out.println("Original: ");
         for (int i = 0; i < n; i++) {
             System.out.println((i+1) + " - " + A[i]);
         }
-
-        //Realiza a ordenação do vetor A
+        
         heapsort(A, n);
 
         System.out.println("Depois: ");
