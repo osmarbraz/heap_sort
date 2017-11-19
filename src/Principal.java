@@ -7,7 +7,7 @@
  *  
  * Baseado nos slides 58 da aula 15/09/2017 
  *
- * Página 110 Cormen 3 ed
+ * Página 110 Thomas H. Cormen 3 ed
  *
  * Algoritmo HeapSort/Ordenação por Heap
  *
@@ -43,7 +43,7 @@ public class Principal {
      *
      * Em java pode ser utilizando Math.floor(double)
      *
-     * @param x Numero real a ser cálculado o piso.
+     * @param x Número real a ser calculado o piso.
      * @return um valor inteiro com o piso de x.
      */
     public static int piso(double x) {
@@ -51,14 +51,14 @@ public class Principal {
         int parteInteira = (int) x;
         //Pego a parte fracionária de x
         double parteFracionaria = x - parteInteira;
-        //Retorno x subtraindo a parte fracionaria 
+        //Retorno x subtraindo a parte fracionária 
         return (int) (x - parteFracionaria);
     }
 
     /**
      * Retorna o índice do pai de i.
      * 
-     * Página 111 Cormen 3 ed 
+     * Página 111 Thomas H. Cormen 3 ed 
      *
      * @param i Índice do filho
      * @return O índice do seu pai
@@ -70,7 +70,7 @@ public class Principal {
     /**
      * Retorna o índice do filho da esquerda de i.
      * 
-     * Página 111 Cormen 3 ed
+     * Página 111 Thomas H. Cormen 3 ed
      *
      * @param i Ïndice do pai
      * @return O índice do filho da esquerda de i
@@ -82,7 +82,7 @@ public class Principal {
     /**
      * Retorna o índice do filho da direita de i.
      * 
-     * Página 111 Cormen 3 ed
+     * Página 111 Thomas H. Cormen 3 ed
      *
      * @param i Ïndice do pai
      * @return O índice do filho da direita de i
@@ -111,7 +111,7 @@ public class Principal {
      *
      * Slide 58 aula 15/09/2017 T(h)<= T(h−1) + Theta(5)+O(2) 
      * 
-     * Página 112 Cormen 3 ed
+     * Página 112 Thomas H. Cormen 3 ed
      *     
      * @param A Vetor a ser odenado
      * @param n Quantidade de elementos do vetor
