@@ -26,7 +26,7 @@
  *
  * Atenção:
  * Vetor em java inicia em 0, os algoritmos consideram início em 1.
- * A subtraçào de -1 ocorre somente no local de acesso ao vetor ou matriz 
+ * A subtração de -1 ocorre somente no local de acesso ao vetor ou matriz 
  * para manter a compatibilidade entre os algoritmos.
  * 
  **/
@@ -56,6 +56,8 @@ public class Principal {
     }
 
     /**
+     * Pai ou Parent.
+     * 
      * Retorna o índice do pai de i.
      * 
      * Página 111 Thomas H. Cormen 3 ed 
@@ -68,6 +70,8 @@ public class Principal {
     }
 
     /**
+     * Esquerda ou Left.
+     * 
      * Retorna o índice do filho da esquerda de i.
      * 
      * Página 111 Thomas H. Cormen 3 ed
@@ -80,6 +84,8 @@ public class Principal {
     }
 
     /**
+     * Direita ou Right.
+     * 
      * Retorna o índice do filho da direita de i.
      * 
      * Página 111 Thomas H. Cormen 3 ed
@@ -92,11 +98,14 @@ public class Principal {
     }
 
     /**
+     * Troca ou Swap.
+     * 
      * Realiza a troca de posição de dois elementos do vetor.
+     * A[i]<->A[j]
      *
      * @param A Vetor que contém os dados
-     * @param i Primeira posição de torca
-     * @param j Segunda posição de torca
+     * @param i Primeira posição de troca
+     * @param j Segunda posição de troca
      */
     public static void troca(int[] A, int i, int j) {
         int aux = A[i - 1];
@@ -105,7 +114,9 @@ public class Principal {
     }
 
     /**
-     * MaxHeapiFy. Recebe A e i >= 1 tais que subárvores com raízes 2i e 2i + 1.
+     * MaxHeapiFy. 
+     * 
+     * Recebe A e i >= 1 tais que subárvores com raízes 2i e 2i + 1.
      * São max-heaps e rearranja A de modo que subárvore com raiz i seja um
      * max-heap. Organiza os elementos da heap, coloca o maior na raiz.
      *
@@ -140,8 +151,11 @@ public class Principal {
     }
 
     /**
-     * Recebe um vetor A e rearranja A para que seja max-heap. Em maxHeap os nós
-     * pais são maiores que os respectivos nós filhos
+     * ConstroiMaxHeap ou BuildMaxHeap.
+     * 
+     * Recebe um vetor A e rearranja A para que seja max-heap. 
+     * 
+     * Em maxHeap os nós pais são maiores que os respectivos nós filhos
      *
      * @param A Vetor dos nós da árvore
      * @param n Quantidade de elementos da árvore
@@ -153,13 +167,15 @@ public class Principal {
     }
 
     /**
-     * Heapsort. Rearranja A em ordem crescente. Algoritmos de ordenação podem
+     * Heapsort. 
+     * 
+     * Rearranja A em ordem crescente. Algoritmos de ordenação podem
      * ser ou não in-place ou estáveis. Um algoritmo de ordenação é in-place se
      * a memória adicional requerida é independente do tamanho do vetor que está
-     * sendo ordenado. O heapsort é in-place
+     * sendo ordenado. O heapsort é in-place.
      *
-     * T(n) = nO(lg n)+Theta(4n+1)= O(n log n) Complexidade no pior caso O(n log
-     * n)
+     * T(n) = nO(lg n)+Theta(4n+1)= O(n log n) 
+     * Complexidade no pior caso O(n log n)
      *
      * @param A Vetor dos nós da árvore
      * @param n Quantidade de nós da árvore
